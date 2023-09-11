@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import City from './City';
 
 class Country extends Component {
     constructor(props){
@@ -19,9 +20,10 @@ class Country extends Component {
     render() {
         return (
             <div>
-                <h1>Country Component(India)</h1>
+                <h1>Country Component</h1>
                 <h2>Our Country is:{ this.state.countryName}</h2>
                 <button onClick={this.changeCountry}>changeCountry</button>
+                <City Country_Name = {this.state.countryName}/>
             </div>
         );
     }

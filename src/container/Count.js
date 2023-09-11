@@ -10,10 +10,12 @@ class Count extends Component {
     }
 
     handleincrement = (countName) => {
-
-        this.setState({
-            countName: this.state.countName + 1
-        })
+        if(this.state.countName < 5){
+            this.setState({
+                countName: this.state.countName + 1
+            })
+        }
+        
 
 
     }
