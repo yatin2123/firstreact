@@ -42,9 +42,11 @@ function Quotes(props) {
                         <p>---{qData[index].author}</p>
                         <button 
                         onClick={handlepre}
-                        // disable={}
+                        disable={index === 0 ? true : false}
                         >Preveus</button>
-                        <button onClick={handlenext}>Next</button>
+                        <button onClick={handlenext}
+                          disable={index === qData.length-1 ? true : false}
+                        >Next</button>
                     </>
             }
         </div>

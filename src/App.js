@@ -9,6 +9,7 @@ import Lifi_cy from "./container/Lifi_cy";
 import Timer from "./container/Timer";
 import TimerFun from "./container/TimerFun";
 import Quotes from "./container/Quotes";
+import Product from "./container/Product";
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
       {/* <Count/> */}
       {/* <Timer/> */}
       {/* <TimerFun/> */}
-      <Quotes/>
+      {/* <Quotes/> */}
+      <Product/>
     </div>
   );
 }
