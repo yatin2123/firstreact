@@ -10,6 +10,8 @@ import Timer from "./container/Timer";
 import TimerFun from "./container/TimerFun";
 import Quotes from "./container/Quotes";
 import Product from "./container/Product";
+import Product_cat from "./container/Product_cat";
+
 
 
 function App() {
@@ -28,7 +30,8 @@ function App() {
       {/* <Timer/> */}
       {/* <TimerFun/> */}
       {/* <Quotes/> */}
-      <Product/>
+      {/* <Product/> */}
+      <Product_cat/>
     </div>
   );
 }

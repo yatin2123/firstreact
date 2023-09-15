@@ -15,8 +15,8 @@ function Product(props) {
         // setInput(val)
         // console.log();
         let fData = fake.filter((v) => 
-            v.text.toLowerCase().includes(val.toLowerCase()) ||
-            v.author.toLowerCase().includes(val.toLowerCase())
+            v.title.toLowerCase().includes(val.toLowerCase()) ||
+            v.price.toString().includes(val.toString())
         );
         console.log(fData);
         setFilData(fData)
@@ -25,7 +25,7 @@ function Product(props) {
     const finalData = filData.length > 0 ? filData : fake;
     
     const getData = async () => {
-        let response = await fetch('https://type.fit/api/quotes')
+        let response = await fetch('https://fakestoreapi.com/products')
         let data = await response.json();
         
         setFake(data)
@@ -58,9 +58,9 @@ function Product(props) {
                                             <div className='main_box'>
 
                                                 <div className='box'>
-                                                    {/* <img src={v.image}></img> */}
-                                                    <h5>Title: {v.text}</h5>
-                                                    <h4>$ {v.author}</h4>
+                                                    <img src={v.image}></img>
+                                                    <h5>Title: {v.title}</h5>
+                                                    <h4>$ {v.price}</h4>
                                                 </div>
                                             </div>
                                         </div>
