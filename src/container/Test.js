@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-import { BaseCard } from './Test/Card.style';
-import { Heading } from './Test/Card.style';
-import { Subtitle } from './Test/Card.style';
+import Card from './Test/Card';
 
 
-function Test(props) {
 
-    const Data = [{
+
+const data = [
+    {
         "id": "GGOEAFKA087499",
         "name": "Android Small Removable Sticker Sheet",
         "description": "Show your Android pride by placing these 8 fun stickers on your technology products or accessories!",
         "features": "<p>8 Android stickers</p>\n<p>White colored sticker sheet</p>",
         "price": "2.99",
         "keywords": "Android Small Removable Sticker Sheet, android stickers, sticker sheets, removable sticker sheets, small sticker sheet, android small sticker sheets, Android Sheet",
-        "url": "https://loremflickr.com/320/240 ",
+        "url": "https://loremflickr.com/320/240&quot",
         "category": "accessories",
         "subcategory": "accessories"
     },
@@ -160,29 +159,30 @@ function Test(props) {
         "category": "drinkware",
         "subcategory": "drinkware"
     }
-    ]
-
-    const [data, setData] = useState(Data)
-
-    const getData = () => {
-
-    }
+]
 
 
+function Test(props) {
 
     return (
-        <div >
-            {data.map((v) => {
+        <div className='container'>
+            <div className='row'>
+                {
+                    data.map((v) => {
+                        return (
+                            <div className='col-md-4'>
+                                <Card>
+                                    id={v.id}
+                                    title = {v.name}
+                                    subtitle={v.category}
+                                    img={v.url}
+                                </Card>
+                            </div>
+                        )
+                    })
+                }
+            </div>
 
-                return (
-                    <BaseCard className= 'box'>
-                        <Heading>{v.name}</Heading>
-                        <Subtitle>{v.description}</Subtitle>
-                        <h2>{v.category}</h2>
-                        <p>{v.price}</p>
-                    </BaseCard>
-                )
-            })}
         </div>
     );
 }

@@ -1,51 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import Student from './Student';
+import Employe from './Employe';
 
-class Contact extends Component {
-    constructor(props) {
-        super(props);
 
-    }
-
-    componentWillMount() {
-
-    }
-
-    componentDidMount() {
-
-    }
-
-    componentWillReceiveProps(nextProps) {
-
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-
-    }
-
-    componentWillUnmount() {
-
-    }
-
-    render() {
-        return (
-            <div>
-                <h2>Contact Page</h2>
-            </div>
-        );
-    }
+function Contact() {
+    const location = useLocation(); 
+    console.log(location);
+    return (
+        <div>
+            Contact Page {location.state.name}
+            <Routes>
+                <Route path="/employe" element={<Employe />} />
+                <Route path="/student" element={<Student />} />
+            </Routes>
+           
+        </div>
+    )
 }
-
-Contact.propTypes = {
-
-};
 
 export default Contact;

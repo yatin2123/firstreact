@@ -1,52 +1,16 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
-class About extends Component {
-    constructor(props) {
-        super(props);
+import { useNavigate } from 'react-router-dom';
 
-    }
-
-    componentWillMount() {
-
-    }
-
-    componentDidMount() {
-
-    }
-
-    componentWillReceiveProps(nextProps) {
-
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-
-    }
-
-    componentWillUnmount() {
-
-    }
-
-    render() {
-        return (
-            <div>
-                
-                <h2>About Page.</h2>
-            </div>
-        );
-    }
+function About(){
+    const navigat = useNavigate()
+    return(
+        <div>
+            About Page
+            <button onClick={() => navigat('/contact',{state: {name: 'yatin'}})}>Move to contact</button>
+        </div>
+    )
 }
 
-About.propTypes = {
-
-};
 
 export default About;

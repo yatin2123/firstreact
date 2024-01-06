@@ -65,6 +65,7 @@ function Quotes(props) {
                                         <div className='col-md-4 border'>
                                             <h2>{v.text}</h2>
                                             <h2>{v.author}</h2>
+                          
                                         </div>
                                     </div>
                                 )

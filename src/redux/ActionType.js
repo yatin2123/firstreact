@@ -1,0 +1,8 @@
+
+
+export const INCREMENT_COUNTER = "INCREMENT_COUNTER"
+
+export const DECREMENT_COUNTER = "DECREMENT_COUNTER"
+
+export const ADD_COMMENT = "ADD_COMMENT"
+export const GET_COMMENT = "GET_COMMENT"

@@ -18,43 +18,22 @@ import Home from "./container/Home";
 import { BrowserRouter as Main, Route, Routes } from "react-router-dom";
 import Contact from "./container/Contact";
 import Test from "./container/Test";
+import { Provider } from "react-redux";
+import { configuration } from "./redux/store";
+import Counter from "./container/Counter";
+import Example from "./container/Example";
+import Comment from "./container/Comment";
 
 
 function App() {
+
+  let store = configuration()
   return (
-    <div className="App">
-      {/* <About/> */}
-      {/* <Home/> */}
-      {/* <Life_cy1/>  */}
-      {/* <Lifi_cy/> */}
-      {/* <CountryFun/> */}
-     {/* <CountFun/> */}
-     {/* <Medicines/> */}
-      {/* <Country/> */}
-
-      {/* <City/> */}
-
-      {/* <Count/> */}
-      {/* <Timer/> */}
-      {/* <TimerFun/> */}
-      {/* <Quotes/> */}
-      {/* <Product/> */}
-      {/* <Product_cat/> */}
-
-      {/* <Navbar/> */}
-      {/* <Home/> */}
-      {/* <Contact/> */}
-      {/* <Main>
-        <Navbar/>
-
-        <Routes>
-          <Route exact path="/" element={<Home/>}/>
-          <Route exact path="/about" element={<About/>}/>
-          <Route exact path="/contact" element={<Contact/>}/>
-        </Routes>
-      </Main> */}
-      <Test/>
-    </div>
+    <Provider store={store}>
+      {/* <Counter /> */}
+      {/* <Example/> */}
+      <Comment/>
+    </Provider>
   );
 }
 

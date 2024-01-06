@@ -28,3 +28,19 @@ export const Subtitle = styled.h3`
         background: #fff;
     }
 `
+
+export const Subtitle1 = styled.h3`
+    color: black;
+    &:hover{
+        background: #fff;
+    }
+`
+
+
+export const Price = styled.p`
+font-weight:bold;
+// color:orange;
+&:hover{
+    background: #fff;
+}
+`
