@@ -2,7 +2,9 @@ import { ADD_COMMENT, GET_COMMENT } from "../ActionType";
 
 
 const initialState = {
+    isLoding : false,
     comment: [],
+    error: null,
 }
 
 export const commentReducer = (state =initialState, action ) => {
@@ -14,11 +16,10 @@ export const commentReducer = (state =initialState, action ) => {
                 ...state,
                 comment : action.payload
             }
-
         case ADD_COMMENT:
             return{
                 ...state,
-                comment: state.comment.concat(action.payload)
+                comment : state.comment.concat(action.payload)
             }
             
         default:
