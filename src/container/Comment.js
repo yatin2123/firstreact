@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { addData, addcommentData, getData, getcommentData } from '../redux/action/comment.action';
+import { addData, addcommentData, deleteData, getData, getcommentData } from '../redux/action/comment.action';
 import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -43,15 +43,33 @@ function Comment(props) {
         },
     });
 
+    const handledelete = (id) => {
+        console.log(id);
+        dispatch(deleteData(id))
+    }
+
+    const handleedite = (v) => {
+        console.log(v);
+    }
+
     const { handleSubmit, handleChange, handleBlur, values, errors, touched } = formik;
 
     return (
         <div>
+
+            {
+                comment.isLoding ?
+                   <p>isLoding........</p> :
+                   
+                   
+                   comment.error ? <p>{comment.error.message}</p> : null
+                   
+        
+            }
             <form onSubmit={handleSubmit}>
 
                 <input name='name' type='text' onChange={handleChange} onBlur={handleBlur} value={values.name} />
                 <span>{errors.name && touched.name ? errors.name : null}</span>
-
 
                 <button type="submit">Submit</button>
             </form>
@@ -62,10 +80,17 @@ function Comment(props) {
                     // console.log(v);
 
                     return (
+                        <>
 
-                        <h2>{v.name}</h2>
+                            <h2>{v.name}</h2>
+                            <button onClick={() => handledelete(v.id)}>X</button>
+                            <button onClick={() => handleedite(v)}>X</button>
+                        </>
+
+
                     )
                 })
+
             }
 
 
